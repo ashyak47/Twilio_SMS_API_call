@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const accountSid = 'ACa73d7bec52e142cf0f6763266f22b959';
-const authToken = '5c5215804bb5d8cae7e52d6a15be4b4d';
+const authToken = 'c8a456a51b870842ba9dc8830d1d3a51';
 
 const sendSms = (phone, message) => {
     debugger;

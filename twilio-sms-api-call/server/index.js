@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 
-const port = 4004;
+const port = 4008;
 
 // Create users endpoint
 app.post('/sendSMS', (req, res) => {

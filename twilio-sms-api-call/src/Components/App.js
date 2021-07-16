@@ -1,10 +1,10 @@
-import TwilioAPI from "./UI";
+import UI from "./UI";
 
 function App() {
   return (
     <div className="App">
       <p>Hello world</p>
-      <TwilioAPI />
+      <UI />
     </div>
   );
 }
