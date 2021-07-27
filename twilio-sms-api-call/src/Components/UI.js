@@ -11,17 +11,19 @@ const UI = () => {
   // Declare a new state variable, which we'll call "count"
   const [message, setMessage] = useState({
     recipient: '',
-    textmessage: ''
+    textmessage: '',
+    email: ''
   }
   );
 
   const sendText = _ => {
-    const { recipient, textmessage } = message;
+    const { recipient, textmessage, email } = message;
     //pass text message GET variables via query string
-    fetch(`http://localhost:4008/sendSms`, {
+    fetch(`http://localhost:4008/sendSmsAndEmail`, {
       method: "POST", body: JSON.stringify({
         phone: recipient,
-        message: textmessage
+        message: textmessage,
+        email: email
       }), headers: {
         "Content-type": "application/json; charset=UTF-8"
       }
@@ -42,6 +44,12 @@ const UI = () => {
         <br />
         <textarea rows={3} value={message.textmessage} style={textArea}
           onChange={e => { setMessage({ ...message, textmessage: e.target.value }); }} />
+        <div style={spacer} />
+        
+        <label placeholder="Optional"> Email ID </label>
+        <br />
+        <input value={message.email}
+          onChange={e => { setMessage({ ...message, email: e.target.value }); }} />
         <div style={spacer} />
         <button onClick={() => sendText()}> Send Text </button>
       </div>
